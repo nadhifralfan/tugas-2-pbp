@@ -1,8 +1,10 @@
 # Tugas 2: Pengenalan Aplikasi Django dan Models View Template (MVT) pada Django
 
-## Nama: Nadhif Rahman Alfan
+## Nama         : Nadhif Rahman Alfan
 
-## NPM : 2106751783
+## NPM          : 2106751783
+
+## Link Heroku  : `https://nadhif-tugas-2-pbp.herokuapp.com/katalog/`
 
 1. **Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html**
 
