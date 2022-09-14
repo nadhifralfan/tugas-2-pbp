@@ -6,7 +6,7 @@
 
 1. **Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html**
 
-![bagan](https://raw.githubusercontent.com/nadhifralfan/tugas-2-pbp/main/bagain-tugas-2.png?raw=true)
+![bagan](https://raw.githubusercontent.com/nadhifralfan/tugas-2-pbp/main/bagan-tugas-2.png?raw=true)
 
 Pertama, user akan mengirimkan GET HTTP request menuju server. Kemudian akan menggunakan `urls.py` untuk memetakan permintaan ke controller (views) sesuai dengan URL yang ditentukan. Controller yang sudah ditentukan oleh `views.py` akan merender file HTML di server bersama dengan data yang dibutuhkan. Data yang dirender menjadi HTML diambil dari database melalui `models.py`. Terakhir, server akan mengirimkan respon berupa HTML yang akan ditampilkan menjadi tampilan website.
 
