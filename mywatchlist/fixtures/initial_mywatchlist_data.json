@@ -3,11 +3,11 @@
         "model":"mywatchlist.mywatchlist",
         "pk":1,
         "fields":{
-            "watched": false,
-            "title": "Iron Woman 15",
+            "watched": true,
+            "title": "Iron Man",
             "rating": 5, 
-            "release_date": "12/12/2035",
-            "review": "Iron Woman menceritakan kisah sebuah iron yang merupakan seorang woman"
+            "release_date": "30/04/2008",
+            "review": "Film hebat, yang berfungsi sebagai pengantar sempurna untuk karakter Tony Stark. Antagonisnya agak membosankan, tapi selain itu, saya suka filmnya"
         }
 },
 {
@@ -15,10 +15,10 @@
         "pk":2,
         "fields":{
             "watched": true,
-            "title": "Pengabdi Ketan 2",
+            "title": "Pengabdi Setan 2: Communion",
             "rating": 5, 
-            "release_date": "02/08/2022",
-            "review": "Berlanjut dari Pengabdi Ketan, kali ini Ketan sangat marah karena Bubur Kacang Hijau"
+            "release_date": "04/08/2022",
+            "review": "Plotnya tidak memiliki banyak perbedaan, itu masih dipenuhi dengan banyak misteri tentang kultus itu sendiri dan meninggalkan lebih banyak pertanyaan dan teori. Mereka pasti menyimpan sesuatu yang besar untuk yang berikutnya."
         }
     },
     {
@@ -29,7 +29,7 @@
             "title": "Miracle in Cell No. 7",
             "rating": 4, 
             "release_date": "07/08/2022",
-            "review": "Mengisahkan Dodo Rozak (Vino G. Bastian), seorang ayah dengan keterbelakangan mental yang dituduh melakukan kejahatan sehingga harus dipenjara dan meninggalkan anak perempuannya yang masih kecil."
+            "review": "Film emosional yang bagus. Perjalanan dan korsel sejati saat Anda beralih dari tertawa menjadi menangis menjadi tertawa terbahak-bahak. Para aktornya sempurna, ceritanya diikuti dengan sangat baik"
         }
     },
     {
@@ -52,6 +52,61 @@
             "rating": 5, 
             "release_date": "21/08/2022",
             "review": "Kisah petualangan Luffy kembali menjajaki layar lebar. Pada film kali ini, One Piece mengisahkan Bajak Laut Topi Jerami yang pergi ke sebuah festival musik. Festival tersebut terletak di Pulau Musik Elegia yang menjadi lokasi konser diva terbesar di dunia."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":6,
+        "fields":{
+            "watched": true,
+            "title": "Red Notice",
+            "rating": 3, 
+            "release_date": "04/11/2021",
+            "review": "Tidak sebaik yang saya perkirakan. Beberapa lelucon dan adegan perkelahian yang bagus, tetapi naskahnya hambar dan visualnya tampak palsu. Pemeran semua bintang tetapi tidak ada substansi untuk cerita atau karakter."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":7,
+        "fields":{
+            "watched": false,
+            "title": "Mencuri Raden Saleh",
+            "rating": 5, 
+            "release_date": "25/08/2022",
+            "review": "Film terbaik dan menakjubkan yang dimiliki Indonesia. Mengusung tema perampokan dengan pemeran muda, film ini memberikan kita aksi dan keseruan yang luar biasa."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":8,
+        "fields":{
+            "watched": true,
+            "title": "KKN di Desa Penari",
+            "rating": 4, 
+            "release_date": "04/11/2021",
+            "review": "Sinematografi dan para pemainnya luar biasa, seluruh pengaturan dan suasana hati sangat tepat. Tetapi jika Anda seorang fanatik film horor, film ini tidak memiliki jumpscare dan ada banyak plot hole yang jelas."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":9,
+        "fields":{
+            "watched": true,
+            "title": "Spider-Man: No Way Home",
+            "rating": 4, 
+            "release_date": "30/04/2022",
+            "review": "Sejumlah besar umpan nostalgia, beberapa lubang plot yang melumpuhkan, dan pilihan karakter yang tidak dapat dijelaskan membuat Spider-Man 3 terbaik."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":10,
+        "fields":{
+            "watched": true,
+            "title": "Penyalin Cahaya",
+            "rating": 4, 
+            "release_date": "08/10/2021",
+            "review": "Plotnya unik dan disusun dengan baik, tetapi eksekusinya tidak. Sudah jelas sejak awal bahwa ini tidak akan menjadi film biasa & tidak."
         }
     }
 ]
