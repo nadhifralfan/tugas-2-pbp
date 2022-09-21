@@ -4,13 +4,13 @@ from django.urls import resolve
 # Create your tests here.
 class AppTest(TestCase):
     def test_html(self):
-        response = Client().get('https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/html/')
+        response = Client().get('http://localhost:8000/mywatchlist/html/')
         self.assertEqual(response.status_code, 200)
 
     def test_xml(self):
-        response = Client().get('https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/xml/')
+        response = Client().get('http://localhost:8000/mywatchlist/xml/')
         self.assertEqual(response.status_code,200)
     
     def test_json(self):
-        response = Client().get('https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/json/')
+        response = Client().get('http://localhost:8000/mywatchlist/json/')
         self.assertEqual(response.status_code,200)

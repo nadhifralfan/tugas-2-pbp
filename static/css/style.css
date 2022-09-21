@@ -1,0 +1,24 @@
+body {
+    background-color: #34495e;
+}
+
+h1, h2, h3, p {
+    color: #ecf0f1;
+    font-family: Montserrat
+}
+table {
+    background-color: #ecf0f1;
+}
+th {
+    background-color: #7f8c8d;
+    padding: 10px;
+    color: #ecf0f1;
+    font-family: Montserrat
+}
+
+td {
+    background-color: #95a5a6;
+    padding: 15px;
+    color: #2c3e50;
+    font-family: Montserrat
+}
