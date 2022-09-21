@@ -32,7 +32,7 @@ HTML atau singkatan dari Hypertext Markup Language adalah bahasa markup yang dig
 |Menampilkan Data(Secara Estetika)| Kurang Bagus | Kurang Bagus | Bagus |
 |Membawa Data| Baik | Baik | Kurang Baik |
 |Mendukung Penggunaan Comment| Tidak | Ya | Ya |
-|Encoding| UTF-8 | Apa Saja | UTF-8, UTF-16, UTS-32 |
+|Encoding| UTF-8 | Apa Saja | UTF-8, UTF-16, UTF-32 |
 |Mendukung Penggunaan Array | Ya | Tidak | Tidak |
 
 ## Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
