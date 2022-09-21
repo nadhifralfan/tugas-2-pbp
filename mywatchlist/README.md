@@ -4,16 +4,28 @@
 
 ## NPM          : 2106751783
 
-## Link Heroku  : `https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/html/` , `https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/json/`, `https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/xml/`
+## Link Heroku  : 
+`https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/html/`
+
+`https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/json/`
+
+`https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/xml/`
 
 ## Jelaskan perbedaan antara JSON, XML, dan HTML!
 **JSON**
+
 JSON atau singkatan dari JavaScript Object Notation merupakan sebuah format format yang digunakan untuk menyimpan dan mentransfer data.
+
 **XML**
+
 XML atau singkatan dari eXtensible Markup Language adalah bahasa markup yang diciptakan oleh konsorsium World Wide Web (W3C) yang berfungsi untuk menyederhanakan proses penyimpanan dan pengiriman data antarserver.
+
 **HTML**
+
 HTML atau singkatan dari Hypertext Markup Language adalah bahasa markup yang digunakan untuk membuat halaman website dan isinya terdiri dari berbagai kode yang dapat menyusun struktur suatu website.
+
 **Perbedaan**
+
 | | JSON | XML | HTML |
 |---|---|---|---|
 |Memerlukan End Tag| Tidak | Ya | Ya (dengan Pengecualian Empty Element) |
@@ -52,3 +64,6 @@ Pada era digital saat ini, jumlah penggunaan data telah meningkat berkali-kali l
 11. Melakukan git `add`, `commit`, dan `push` yang nantinya akan otomatis github Actions yang melakukan deploy menuju Heroku.
 
 ## Mengakses URL dengan Postman
+![postman_html](https://raw.githubusercontent.com/nadhifralfan/tugas-2-pbp/main/mywatchlist/postman_html.png)
+![postman_xml](https://raw.githubusercontent.com/nadhifralfan/tugas-2-pbp/main/mywatchlist/postman_xml.png)
+![postman_json](https://raw.githubusercontent.com/nadhifralfan/tugas-2-pbp/main/mywatchlist/postman_json.png)
