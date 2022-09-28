@@ -5,7 +5,7 @@
 ## NPM          : 2106751783
 
 ## Link Heroku  : 
-`https://nadhif-tugas-2-pbp.herokuapp.com/mywatchlist/html/`
+`https://nadhif-tugas-2-pbp.herokuapp.com/todolist/`
 
 ## Apa kegunaan `{% csrf_token %}` pada elemen `<form>`? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen `<form>`?
 `{% csrf_token %}` memiliki fungsi untuk mencegah serangan CSRF. CSRF atau Cross-Site Request Forgery adalah jenis serangan eksploitasi web yang membuat user tanpa sadar mengirim sebuah request ke website melalui website yang sedang digunakan pada saat itu. Serangan CSRF memungkinkan exploiter melakukan permintaan HTTP sembarang berupa POST atau GET dengan mengatasnamakan user yang saat ini diautentikasi pada situs web.
