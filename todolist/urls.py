@@ -1,4 +1,3 @@
-from turtle import update
 from django.urls import path
 from todolist.views import show_todolist
 from todolist.views import register
