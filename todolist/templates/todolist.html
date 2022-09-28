@@ -30,21 +30,21 @@
         <td>{{task.title}}</td>
         <td>{{task.description}}</td>
         <td>{% if task.finished %}
-            <p1>Sudah</p1>
+            <p1>Finished</p1>
             {% else %}
-            <p1>Belum</p1>
+            <p1>Not Finished</p1>
           {% endif %}</td>
         <td class="td1">
-            <button><a href="{% url 'todolist:update_todolist' task.id %}"><h1 class="p2" style="color:#34495e">Update</h1></a></button>
+            <button><a href="{% url 'todolist:update_todolist' task.id %}"><h3 class="p2" style="color:#34495e">Update</h3></a></button>
         </td>
         <td class="td1">
-            <button><a href="{% url 'todolist:delete_todolist' task.id %}"><h1 class="p2" style="color:#34495e">Hapus</h1> </a></button>
+            <button><a href="{% url 'todolist:delete_todolist' task.id %}"><h3 class="p2" style="color:#34495e">Delete</h3> </a></button>
         </td>
     </tr>
     {% endfor %}
 </table>
 
-<button style="margin-top: 20px;"><h3><a href="{% url 'todolist:create_todolist' %}">Tambah Task Baru</a></h3></button>
-<button><h3><a href="{% url 'todolist:logout' %}">Logout</a></h3></button>
+<button style="margin-top: 20px;"><h3><a style="color:#34495e" href="{% url 'todolist:create_todolist' %}">Create New Task</a></h3></button>
+<button><h3><a style="color:#34495e" href="{% url 'todolist:logout' %}">Logout</a></h3></button>
 
 {% endblock content %}
