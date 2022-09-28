@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+<title>My Todolist</title>
+{% endblock meta %}
+
 {% block content %}
+
 <h1><b>Tugas 2 Assignment PBP/PBD</b></h1>
 
 <h3>Name: </h3>
@@ -38,7 +43,8 @@
     </tr>
     {% endfor %}
 </table>
-<button><a href="{% url 'todolist:create_todolist' %}">Tambah Task Baru</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+<button style="margin-top: 20px;"><h3><a href="{% url 'todolist:create_todolist' %}">Tambah Task Baru</a></h3></button>
+<button><h3><a href="{% url 'todolist:logout' %}">Logout</a></h3></button>
 
 {% endblock content %}
