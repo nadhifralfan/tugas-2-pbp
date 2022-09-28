@@ -7,7 +7,7 @@ h1, h2, h3, p {
     font-family: Montserrat
 }
 table {
-    background-color: #ecf0f1;
+    border: #ecf0f1;
 }
 th {
     background-color: #7f8c8d;
@@ -16,7 +16,7 @@ th {
     font-family: Montserrat
 }
 
-td {
+td, p1 {
     background-color: #95a5a6;
     padding: 15px;
     color: #2c3e50;
