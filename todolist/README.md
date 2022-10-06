@@ -19,27 +19,33 @@ External CSS merupakan tipe CSS yang ditulis terpisah dengan kode HTML yakni dit
 
 **Kelebihan dan Kekurangan**
 Inline
+
 (+)
 - Berguna ketika ingin menguji dan melihat suatu perubahan pada suatu elemen
 - Dapat memperbaiki kode dengan cepat
 - Proses HTTP request yang lebih sehinga proses load website menjadi lebih cepat
+
 (-)
 - Tidak efisien karena hanya dapat diterapkan pada satu tag elemen di HTML
 
 Internal
+
 (+)
 - Berlaku pada satu file HTML saja
 - Tidak perlu melakukan upload beberapa file karena HTML dan CSS nya berada dalam satu file yang sama.
 - Class dan ID dapat digunakan oleh stylesheet
+
 (-)
 - Kurang efisien apabila ingin menggunakan CSS yang sama dalam beberapa file
 - Membuat performa websita lebih lama dikarenakan CSS yang berbeda-beda akan mengakibatkan loading ulang setiap mengganti halaman
 
 Eksternal
+
 (+)
 - Ukuran file HTML menjadi lebih kecil dan lebih rapih
 - Loading website menjadi lebih cepat
 - File CSS dapat digunakan di beberapa halaman website sekaligus
+
 (-)
 - Halaman dapat menjadi berantakan apabila CSS gagal dipanggil oleh HTML dikarenakan koneksi internet yang lambat.
 
