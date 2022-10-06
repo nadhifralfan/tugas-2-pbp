@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from todolist.forms import CreateTask
+from todolist.forms import CustomUserCreationForm
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -55,14 +56,17 @@ def update_todolist(request,id):
     return redirect('todolist:show_todolist')
 
 def register(request):
-    form = UserCreationForm()
+    if request.method == 'GET':
+        form  = CustomUserCreationForm()
+        context = {'form': form}
+        return render(request, 'register.html', context)
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Akun telah berhasil dibuat!')
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Akun telah berhasil dibuat untuk ' + user + '!')
             return redirect('todolist:login')
-    
     context = {'form':form}
     return render(request, 'register.html', context)
 

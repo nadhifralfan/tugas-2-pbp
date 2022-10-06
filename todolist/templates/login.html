@@ -6,39 +6,29 @@
 
 {% block content %}
 
-<div class = "login">
-
-    <h1>Login</h1>
-
-    <form method="POST" action="">
+<div class=".bg-light.bg-gradient" style="margin-top: 100px;margin-left: 35%;margin-right: 35%;">
+    <h1 style="text-align: center;">Login</h1>
+    <form method="POST" action="" class="form-control">
         {% csrf_token %}
         <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
+                <tr>Username: </tr>
+                <tr><input type="text" name="username" placeholder="Username" class="form-control" style="border-radius:10px"></tr>  
+                <tr>Password: </tr>
+                <tr><input type="password" name="password" placeholder="Password" class="form-control" style="border-radius:10px"></tr>
+                <tr></tr>
+                <tr><input style="border-radius: 10px;margin-top: 10px;" type="submit" value="Login" ></tr>
         </table>
     </form>
 
     {% if messages %}
         <ul>
             {% for message in messages %}
-                <li>{{ message }}</li>
+                <li style="color: whitesmoke;">{{ message }}</li>
             {% endfor %}
         </ul>
     {% endif %}     
         
-    <h3>Belum mempunyai akun? <a style="color:#000000" href="{% url 'todolist:register' %}">Buat Akun</a></h3>
+    <p>Belum mempunyai akun? <a style="color:whitesmoke" href="{% url 'todolist:register' %}">Buat Akun</a></p>
 
 </div>
 

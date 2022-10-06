@@ -1,3 +1,70 @@
+# Tugas 5: Web Design Using HTML, CSS, and CSS Framework
+## Nama         : Nadhif Rahman Alfan
+
+## NPM          : 2106751783
+
+## Link Heroku  : 
+`https://nadhif-tugas-2-pbp.herokuapp.com/todolist/`
+
+## Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+
+**Inline CSS**
+Inline CSS merupakan tipe CSS yang dimana style tersebut ditulis langsung pada setiap tag elemen di HTML sehingga setiap elemen HTML pasti memiliki atribut style untuk menulis CSS.
+
+**Internal CSS**
+Internal CSS merupakan tipe CSS yang ditulis dalam suatu tag `<style>` pada HTML yang dituliskan pada bagian atas atau `header` file HTML.
+
+**External CSS**
+External CSS merupakan tipe CSS yang ditulis terpisah dengan kode HTML yakni ditulis pada sebuah file khusus yang memiliki ekstensi `.css`.
+
+**Kelebihan dan Kekurangan**
+Inline
+(+)
+- Berguna ketika ingin menguji dan melihat suatu perubahan pada suatu elemen
+- Dapat memperbaiki kode dengan cepat
+- Proses HTTP request yang lebih sehinga proses load website menjadi lebih cepat
+(-)
+- Tidak efisien karena hanya dapat diterapkan pada satu tag elemen di HTML
+
+Internal
+(+)
+- Berlaku pada satu file HTML saja
+- Tidak perlu melakukan upload beberapa file karena HTML dan CSS nya berada dalam satu file yang sama.
+- Class dan ID dapat digunakan oleh stylesheet
+(-)
+- Kurang efisien apabila ingin menggunakan CSS yang sama dalam beberapa file
+- Membuat performa websita lebih lama dikarenakan CSS yang berbeda-beda akan mengakibatkan loading ulang setiap mengganti halaman
+
+Eksternal
+(+)
+- Ukuran file HTML menjadi lebih kecil dan lebih rapih
+- Loading website menjadi lebih cepat
+- File CSS dapat digunakan di beberapa halaman website sekaligus
+(-)
+- Halaman dapat menjadi berantakan apabila CSS gagal dipanggil oleh HTML dikarenakan koneksi internet yang lambat.
+
+## Jelaskan tag HTML5 yang kamu ketahui.
+1. `<nav>` = Mendefinisikan suatu navigasi link
+2. `<style>` = Menambahkan informasi CSS pada head HTML secara internal
+3. `<table>` = Mendefinisikan suatu tabel
+4. `<textarea>` = Mendefinisikan suatu multi-line text yang dapat dikontrol
+5. `<title>` = Mendefinisikan suatu judul pada HTML
+6. `<u>` = Membuat suatu tulisan menjadi underline
+7. `<input>` = Mendefinisikan suatu input kontrol
+8. `<link>` = Menghubungkan suatu project atau HTML dengan sumber dari luar (internet)
+9. `<button>` = Mendefinisikan suatu tombol
+10. `<body>` = Mendefinisikan suatu body pada HTML
+
+## Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+1. `*` = Memilih semua element pada document
+2. `#X` = Memilih suatu element menggunakan id=`X`
+3. `.X` = Memilih semua element yang merupakan class=`X`
+4. `X` = Memilih semua element dengan tipe=`X`
+5. `X:hover` = Menentukan aksi suatu element `X` apabila dihover oleh user
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Pertama-tama, saya melakukan `<link>` untuk mengambil CSS framework yang sudah ada yaitu Bootstap pada `base.html`. Berikutnya saya memodifikasi sedikit `forms.py` dan `views.py` untuk memudahkan saya membuat style untuk forms yang ada seperti registrasi user dan tambah todolist sehingga saya membuat modifikasi ModelForm dan UserCreationForm versi baru. Setelah itu, saya menuliskan style CSS pada folder `style.css` dan saya juga menuliskan beberapa style CSS pada head suatu HTML ataupun di dalam suatu tag elemen HTML. Saya melakukan modifikasi pada halaman register terlebih dahulu, dengan membuat style tertentu untuk setiap elemen. Setelah itu, saya membuat style halaman login dengan cara yang sama seperti pada halaman pertama. Berikutnya, saya memodifikasi creat-task agar dapat terlihat lebih rapih. Kemudian saya membuat elemen cards pada todolist dengan setiap card berisi masing-masing satu task. Terakhir, saya melakukan style CSS untuk hover pada cards todolist yang ada pada `todolist.html`
+
 # Tugas 4: Pengimplementasian Form dan Autentikasi Menggunakan Django
 
 ## Nama         : Nadhif Rahman Alfan
