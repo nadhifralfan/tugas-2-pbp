@@ -1,6 +1,5 @@
 import datetime
 import json
-from turtle import title
 from urllib import request
 from todolist.models import Task
 from django.shortcuts import render
