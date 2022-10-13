@@ -1,4 +1,6 @@
 import datetime
+import json
+from turtle import title
 from urllib import request
 from todolist.models import Task
 from django.shortcuts import render
@@ -12,6 +14,8 @@ from todolist.forms import CreateTask
 from todolist.forms import CustomUserCreationForm
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpRequest
+from django.core import serializers
 from django.urls import reverse
 from datetime import datetime
 
@@ -26,6 +30,21 @@ def show_todolist(request):
         'student_id' : '2106751783',
     }
     return render(request,"todolist.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request):
+    todolist = Task.objects.filter(user=request.user)
+    context = {
+        'username' : request.user.username,
+        'name' : 'Nadhif Rahman Alfan',
+        'student_id' : '2106751783',
+    }
+    return render(request,"todolist_ajax.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_json(request):
+    todolist = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", todolist), content_type="application/json")
 
 @login_required(login_url='/todolist/login/')
 def create_todolist(request):
@@ -43,6 +62,14 @@ def create_todolist(request):
     return render(request,'create-task.html',context)
 
 @login_required(login_url='/todolist/login/')
+def add_todolist(request):
+    if request.method == 'POST':
+        new_task = Task(title=request.POST['title'], description=request.POST['description'], user=request.user)
+        new_task.save()
+        return HttpResponse(serializers.serialize("json", [new_task]), content_type="application/json")
+    return HttpResponse()
+
+@login_required(login_url='/todolist/login/')
 def delete_todolist(request,id):
     task = Task.objects.filter(id=id)[0]
     task.delete()
@@ -54,6 +81,19 @@ def update_todolist(request,id):
     task.finished = not task.finished
     task.save()
     return redirect('todolist:show_todolist')
+
+@login_required(login_url='/todolist/login/')
+def update_todolist_ajax(request,id):
+    task = Task.objects.filter(id=id)[0]
+    task.finished = not task.finished
+    task.save()
+    return redirect('todolist:show_todolist_ajax')
+
+@login_required(login_url='/todolist/login/')
+def delete_todolist_ajax(request,id):
+    task = Task.objects.filter(id=id)[0]
+    task.delete()
+    return redirect('todolist:show_todolist_ajax')
 
 def register(request):
     if request.method == 'GET':

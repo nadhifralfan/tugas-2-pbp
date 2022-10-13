@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+<head>
+{% block meta %}    
+<title>My Todolist</title>
+<style> 
+    .card {
+      width: 75%;
+      height: max-content;
+      transition: width 1s;
+    }
+    
+    .card:hover {
+      width: 100%;
+    }
+    </style>
+{% endblock meta %}
+</head>
+
+<body>
+{% block content %}
+<nav class="navbar" style="background-color: #34495e;">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1" style="color: white;">To Do List by {{name}} - {{student_id}}</span>
+    <div>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 10px; align-items:flex-end;">Create New Task</button>
+      <button style="border-radius: 10px; align-items:flex-end;"><a style="color: black; text-decoration: none;" href="{% url 'todolist:logout' %}">Logout</a></button>
+    </div>
+  </div>
+</nav>
+
+<h3 style="text-align: center;margin-top: 20px;">Welcome, {{username}}!</h3>
+
+<div id="mikum">
+
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" class="form-control" id="createTask">
+          {% csrf_token %}
+          <table style="border-radius: 10px;">
+            <tr style="border-radius: 10px;">
+              <input type="text" style="border-radius: 5px;" name="title" id="title" placeholder="Task Title" class="form-control">
+            </tr>
+            <tr style="border-radius: 10px;">
+              <textarea style="border-radius: 5px; resize: none;margin-top: 10px;" name="description" id="description" placeholder="Task Description" class="form-control" rows="7"></textarea>
+            </tr>
+            <tr>
+              <input type="submit" style="border-radius: 10px; margin-left: 10px; margin-top: 5px;color: black; text-decoration: none; align-items: center;" value="Create">
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+  console.log("test")
+  function getData(){
+    $.get("{% url 'todolist:show_todolist_json'%}", function(data){
+      console.log(data)
+      var div = $('#mikum')
+      div.empty()
+      for (let i = 0; i < data.length; i++) {
+        var topTag = document.createElement("div")
+        var secTag = document.createElement("div")
+        
+        var title = document.createElement("h5")
+        title.classList.add("card-title")
+        title.innerHTML = data[i].fields.title
+        
+        var subtitle = document.createElement("h6")
+        subtitle.classList.add("card-subtitle","mb-2","text-muted")
+        var date = new Date(data[i].fields.date)
+        subtitle.innerHTML = date.toDateString()
+        
+        
+        var status = document.createElement("p1")
+        if (data[i].fields.finished == true){
+          status.innerHTML = "Finished"
+        } else {
+          status.innerHTML = "Not Finished"
+        }
+        
+        subtitle.append(status)
+
+        var description = document.createElement("textarea")
+        description.disabled = true
+        description.classList.add("form-control", "card-text")
+        description.style = "color: black; white-space: nowrap; text-overflow: ellipsis; resize: none;"
+        description.innerHTML = data[i].fields.description
+
+        var table = document.createElement("table")
+        var tr = document.createElement("tr")
+        var td = document.createElement("td")
+        td.classList.add("align-items-center","justify-content-center")
+
+        var update = document.createElement("a")
+        update.classList.add("card-link")
+        update.style = "color: black; text-decoration: none; align-items: center;"
+        update.innerHTML = "Update"
+        update.href = "/todolist/update-task-ajax/" + data[i].pk
+
+        var deleteBtn = document.createElement("a")
+        deleteBtn.classList.add("card-link")
+        deleteBtn.style = "color: black; text-decoration: none; align-items: center;"
+        deleteBtn.innerHTML = "Delete"
+        deleteBtn.href = "/todolist/delete-task-ajax/" + data[i].pk
+
+        td.append(update)
+        td.append(deleteBtn)
+        tr.append(td)
+        table.append(tr)
+
+        secTag.appendChild(title)
+        secTag.appendChild(subtitle)
+        secTag.appendChild(description)
+        secTag.appendChild(table)
+        topTag.appendChild(secTag)
+        secTag.classList.add("card-body")
+        topTag.classList.add("card") 
+        topTag.style = "margin-bottom: 10px; margin-left: auto; margin-right: auto;"
+        div.append(topTag)
+      }
+    })
+  }
+
+  $(document).ready(function() {
+    getData()
+
+    $("#createTask").submit(function (e) {
+      e.preventDefault()
+      const formData = {
+        csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+        title: $('#title').val(),
+        description: $('#description').val(),
+      }
+      $.ajax({
+        async: true,
+        type: "POST",
+        url: "/todolist/add-task/",
+        data: formData,
+        dataType: 'json',
+        success: function(response){
+          $('#exampleModal').modal('toggle');
+          getData()
+          $("#createTask").each(function(){
+            this.reset();
+          })
+        }
+      })
+    })
+  })
+</script>
+{% endblock content %}
+
+</body>
+
+<!-- <div>
+{% for task in todolist %}
+    <div class="card" style="margin-bottom: 10px; margin-left: auto; margin-right: auto;">
+        <div class="card-body">
+                    <table>
+                            <th>
+                                <tr>
+                                    <h5 class="card-title">{{task.title}}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{task.date}}
+                                    {% if task.finished %}
+                                        <p1>Finished</p1>
+                                        {% else %}
+                                        <p1>Not Finished</p1>
+                                    {% endif %}
+                                    </h6>
+                                </tr>
+                                <tr>
+                                    <textarea class="form-control" style="color: black; white-space: nowrap; text-overflow: ellipsis; resize: none;" class="card-text" disabled>{{task.description}}</textarea>
+                                </tr>
+                            </th>
+                            <td class="align-items-center justify-content-center">
+                            <a style="color: black; text-decoration: none; align-items: center;" href="{% url 'todolist:update_todolist' task.id %}" class="card-link">Update</a>
+                            <a style="color: black; text-decoration: none; align-items: center;" href="{% url 'todolist:delete_todolist' task.id %}" class="card-link">Delete</a>
+                            </td>
+                    </table>
+                </div>
+    </div>
+    {% endfor %}
+</div> -->
+
+
+
+
+
